@@ -625,8 +625,9 @@ save_exp_result(st_for_exp, losses, sup_losses, unsup_losses, accs, accs_best, i
 3. seed 195
 ![labeled_samples_seed195](https://user-images.githubusercontent.com/112034941/209675877-f5919af0-cb8e-4f51-8d6d-964d9808256e.png)
 
-실험결과를 보면, labeling data를 100개만 사용한 후 매우 단순한 축에 속하는 모델을 활용했음에도 불구하고 정확도가 매우 높음(96% 이상)을 알 수 있습니다. 이에 대해 이유를 생각해보면 우선 MNIST의 input space에서의 representation을 고려할 필요가 있을 것입니다. MNIST를 t-SNE를 이용해 2차원으로 mapping한 결과를 보면 아래와 같습니다.
-![image](https://user-images.githubusercontent.com/112034941/209679877-116179f2-b2c2-48b2-84e4-f7796a8883cc.png)
+실험결과를 보면, labeling data를 100개만 사용한 후 매우 단순한 축에 속하는 모델을 활용했음에도 불구하고 정확도가 매우 높음(96% 이상)을 알 수 있습니다. 이에 대해 이유를 생각해보면 우선 MNIST의 input space에서의 representation이 현 task에 적합했기 때문이라는 이유가 가장 먼저 떠오릅니다. 이를 확인해보기 위해 MNIST를 t-SNE를 이용해 2차원으로 mapping한 결과를 보면 아래와 같습니다. 각 색이 data 객체의 label을 의미합니다.
+
+![image](https://user-images.githubusercontent.com/112034941/209680797-efea747a-9181-4e47-aaa0-2d9be2675473.png)
 
 이를 보면 앞서 살펴본 semi-supervised learning의 세가지 가정, smoothness assumption, low density assumption, manifold assumption 모두가 잘 만족되는 데이터셋이라고 할 수 있을 것입니다. 이러한 특성이 반영된 결과로써 semi-supervised learning의 성능이 높을 수 있었던 것으로 생각할 수 있겠습니다.
 
