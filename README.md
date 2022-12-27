@@ -637,6 +637,6 @@ save_exp_result(st_for_exp, losses, sup_losses, unsup_losses, accs, accs_best, i
 지금까지 temporal ensembling의 기반이 되는 다양한 개념들과 이를 실제로 구현한 결과 및 실험 결과에 대해서 살펴보았습니다.이번 repository commit에서는 우선 MNIST를 활용한 temporal ensembling의 구현에 집중하였고 추후에는 지금까지 진행한 실험에 더하여 추후 CIFAR10에 대해서도 동일한 실험을 진행하고 다양한 loss fucntion 변경 및 모델 구조 변경을 진행하는 것을 목표로 하고 있습니다. 
 
 혹시 여기서 구현된 내용을 재현하고 싶으신 분들의 경우에는 우선 deep learning 용 GPU 설정을 진행하시는 것이 좋을 것이라 생각됩니다. 그리고 앞서 적어 둔바와 같이 환경 버젼을 통일하시고 올려둔 uitls.py, temporal_ensembling.py, config.py, temporal_ensemble_tutorial.ipynb 모두 다운받으신 후 이를 같은 폴더에 두고 temporal_ensemble_tutorial.ipynb를 실행하시면 됩니다. 그러면 실험 진행 과정이 아래처럼 나타날 것입니다. 진행된 실험 결과의 경우 동일한 폴더의 exp_result 폴더의 해당 실험 시작 시간 폴더 안에 저장됩니다. 
-![image](https://user-images.githubusercontent.com/112034941/209676777-3bb54927-3a09-44c1-a79b-ed35f632cffd.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/112034941/209676777-3bb54927-3a09-44c1-a79b-ed35f632cffd.png" height="500px" width="700px"></p>
 
 만약 이 repository를 참조하실 분들이 있다면 첨부드린 코드와 함께 꼭 readme file 서문에 써놓았듯 고려대학교 강필성 교수님의 [강의영상](https://www.youtube.com/watch?v=vhitW3gsuhw&list=PLetSlH8YjIfWMdw9AuLR5ybkVvGcoG2EW&index=30)과 첨부논문을 꼭 참조하시길 바랍니다. 이 repository를 보신 분들이 temporal ensemble은 물론 다른 머신러닝 분야들도 더 재미있게 공부하실 수 있으면 좋겠습니다. 감사합니다.
