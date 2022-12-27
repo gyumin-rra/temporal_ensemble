@@ -599,16 +599,17 @@ save_exp_result(st_for_exp, losses, sup_losses, unsup_losses, accs, accs_best, i
 - 윈도우 10, GPU: rtx 3080 
 - 실험횟수: 3
 - labeling된 데이터의 수: 100
-- dropout: 0.500000 
-- alpha: 0.600000 
-- guasiisan noise std: 0.150000 
-- ADAM lr: 0.003000 
-- ADAM beta2: 0.990000 
-- 최대 epoch: 200.000000 
-- batch size: 100.000000 
-> best accuracy: 98.46
-> 전체 평균 accuracy: 97.72 (std=0.81)
-> 실험별 평균 정확도: 98.11, 98.46, 96.59
+- dropout: 0.500 
+- alpha: 0.600
+- guasiisan noise std: 0.150 
+- ADAM lr: 0.003
+- ADAM beta2: 0.990 
+- 최대 epoch: 200.
+- batch size: 100. 
+>
+- best accuracy: 98.46
+- 전체 평균 accuracy: 97.72 (std=0.81)
+- 실험별 평균 정확도: 98.11, 98.46, 96.59
 
 실험 결과를 시드별로 정리한 plot은 아래와 같습니다. 
 ![training_loss_plotall](https://user-images.githubusercontent.com/112034941/209675736-21bfa5a8-ac84-4705-924b-037be1dba44c.png)
@@ -623,6 +624,11 @@ save_exp_result(st_for_exp, losses, sup_losses, unsup_losses, accs, accs_best, i
 
 3. seed 195
 ![labeled_samples_seed195](https://user-images.githubusercontent.com/112034941/209675877-f5919af0-cb8e-4f51-8d6d-964d9808256e.png)
+
+실험결과를 보면, labeling data를 100개만 사용한 후 매우 단순한 축에 속하는 모델을 활용했음에도 불구하고 정확도가 매우 높음(96% 이상)을 알 수 있습니다. 이에 대해 이유를 생각해보면 우선 MNIST의 input space에서의 representation을 고려할 필요가 있을 것입니다. MNIST를 t-SNE를 이용해 2차원으로 mapping한 결과를 보면 아래와 같습니다.
+![image](https://user-images.githubusercontent.com/112034941/209679877-116179f2-b2c2-48b2-84e4-f7796a8883cc.png)
+
+이를 보면 앞서 살펴본 semi-supervised learning의 세가지 가정, smoothness assumption, low density assumption, manifold assumption 모두가 잘 만족되는 데이터셋이라고 할 수 있을 것입니다. 이러한 특성이 반영된 결과로써 semi-supervised learning의 성능이 높을 수 있었던 것으로 생각할 수 있겠습니다.
 
 ---
 
